@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rassemblement des Forces Émergentes (RFE) | Wakanda 2025</title>
+    <style>
+        /* Style noir et blanc strict */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #000;
+            background-color: #fff;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid #333;
+        }
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo-img {
+            height: 80px;
+            width: auto;
+            filter: grayscale(100%) contrast(200%);
+        }
+        .party-title {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .party-motto {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+        nav {
+            background-color: #111;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+        }
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+        }
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+            border-bottom: 2px solid #000;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+        }
+        section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 6px solid #000;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .section-intro {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            border: 2px solid #000;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 10px 10px 0 #000;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+        .card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .card li {
+            margin-bottom: 0.8rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            text-align: center;
+            border: 2px solid #000;
+            padding: 1.5rem;
+            background-color: #f5f5f5;
+        }
+        .member-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #000;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            filter: grayscale(100%);
+        }
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .member-role {
+            font-size: 1.1rem;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        footer p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 768px) {
+            .party-title {
+                font-size: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            nav ul li a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+            section {
+                padding: 2rem 1rem;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+        /* Style pour les citations */
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            border-left: 4px solid #000;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: #333;
+        }
+        /* Style pour les boutons */
+        .btn {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            border: 2px solid #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+            <img src="logo.jpg" alt="Logo RFE - Panthère Noire" class="logo-img">
+            <div>
+                <div class="party-title">Rassemblement des Forces Émergentes</div>
+                <div class="party-motto">UNITÉ • TRAVAIL • PROGRÈS</div>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 1.2rem;">Élection Présidentielle du Wakanda 2025</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#programme">Programme Politique</a></li>
+            <li><a href="#a-propos">À Propos du RFE</a></li>
+            <li><a href="#equipe">Équipe Dirigeante</a></li>
+            <li><a href="#vision">Notre Vision</a></li>
+            <li><a href="#valeurs">Nos Valeurs</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="accueil">
+        <h1>Wakanda Émergent, Juste et Solidaire</h1>
+        <p class="hero-subtitle">Un pacte avec le peuple wakandais pour refonder l'État, garantir la justice sociale et bâtir une économie souveraine.</p>
+        <p>Le RFE n'est pas un parti politique comme les autres. Il est avant tout un mouvement citoyen, né de l'exaspération populaire, de la jeunesse consciente, des travailleurs honnêtes et de tous ceux qui refusent que le Wakanda reste prisonnier d'un système usé.</p>
+        <a href="#programme" class="btn">Découvrir notre programme complet</a>
+    </section>
+
+    <section id="programme">
+        <h2>Programme Politique</h2>
+        <p class="section-intro">Notre engagement est clair : le mérite primera sur l'appartenance, la compétence sur la proximité, le service du peuple sur les intérêts personnels. Ce programme est un pacte de vérité et d'action.</p>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>Refonder l'État</h3>
+                <ul>
+                    <li>Tolérance zéro contre la corruption</li>
+                    <li>Cour spéciale anticorruption</li>
+                    <li>Protection des lanceurs d'alerte</li>
+                    <li>Numérisation des procédures administratives</li>
+                    <li>Justice indépendante et accessible</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Dignité Sociale</h3>
+                <ul>
+                    <li>Assurance maladie universelle progressive</li>
+                    <li>Construction d'hôpitaux régionaux</li>
+                    <li>Gratuité réelle de l'école de base</li>
+                    <li>Réforme des programmes éducatifs</li>
+                    <li>Allocation minimale de solidarité</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Économie Souveraine</h3>
+                <ul>
+                    <li>Programme national d'emplois publics</li>
+                    <li>Soutien à l'entrepreneuriat jeune et féminin</li>
+                    <li>Transformation locale des ressources</li>
+                    <li>Création de pôles industriels régionaux</li>
+                    <li>Modernisation de l'agriculture</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Territoires Équilibrés</h3>
+                <ul>
+                    <li>Transfert réel de compétences aux régions</li>
+                    <li>Budgets participatifs locaux</li>
+                    <li>Programme national de logements sociaux</li>
+                    <li>Accès universel à l'eau et à l'électricité</li>
+                    <li>Infrastructures routières modernes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <blockquote class="quote">
+            "Le RFE place l'action, la redevabilité et l'éthique au cœur de son projet politique."
+        </blockquote>
+    </section>
+
+    <section id="a-propos">
+        <h2>À Propos du RFE</h2>
+        <p class="section-intro">Le Rassemblement des Forces Émergentes (RFE) est un mouvement politique national né de la volonté de refonder l'action publique au Wakanda. Le RFE rassemble des femmes et des hommes convaincus que l'avenir du pays passe par l'unité nationale, la justice sociale et des actions concrètes au service des citoyens.</p>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>Notre Nature</h3>
+                <p>Un mouvement citoyen, antisystémique par responsabilité. Nous refusons que le Wakanda reste prisonnier d'un système qui a banalisé l'injustice, normalisé la médiocrité et institutionnalisé le clientélisme.</p>
+            </div>
+            <div class="card">
+                <h3>Notre Public</h3>
+                <p>Le RFE s'adresse à toutes les générations et à toutes les communautés. Il se veut inclusif, républicain et profondément attaché aux valeurs de solidarité, d'équité et de responsabilité.</p>
+            </div>
+            <div class="card">
+                <h3>Notre Engagement</h3>
+                <p>Le RFE s'engage à construire un contrat de confiance durable avec le peuple wakandais. Nous croyons que le changement ne se décrète pas, il se construit collectivement, dans le dialogue, le respect et l'action.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe">
+        <h2>Équipe Dirigeante</h2>
+        <p class="section-intro">Des femmes et des hommes compétents, intègres et dévoués à la cause du Wakanda émergent.</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="adami.jpg" alt="Abakar Adam Adami" class="member-img">
+                <div class="member-name">Abakar Adam Adami</div>
+                <div class="member-role">Candidat à la Présidence</div>
+                <p>Porteur du projet "Wakanda Émergent". Ancien ministre réformateur, connu pour son intégrité et sa vision progressiste.</p>
+            </div>
+            <div class="team-member">
+                <img src="henriette.jpg" alt="Henriette Véronique DIOKH" class="member-img">
+                <div class="member-name">Henriette Véronique DIOKH</div>
+                <div class="member-role">Directrice de Campagne</div>
+                <p>Stratège politique expérimentée, elle orchestre la mobilisation citoyenne et la communication du mouvement.</p>
+            </div>
+            <div class="team-member">
+                <img src="dia.jpg" alt="Mouhamadou DIA" class="member-img">
+                <div class="member-name">Mouhamadou DIA</div>
+                <div class="member-role">Porte-Parole</div>
+                <p>Voix du RFE, chargé de porter notre message de transformation dans les médias et auprès du public.</p>
+            </div>
+            <div class="team-member">
+                <img src="ines.jpg" alt="Marie Ines SARR" class="member-img">
+                <div class="member-name">Marie Ines SARR</div>
+                <div class="member-role">Secrétaire Générale</div>
+                <p>Garante de l'organisation interne, de la cohérence des actions et de la mobilisation des militants.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision">
+        <h2>Notre Vision</h2>
+        <p class="section-intro">Le RFE porte une ambition claire : bâtir un Wakanda uni, juste et prospère, où chaque citoyen, sans distinction de tribu, de territoire ou de condition sociale, bénéficie des mêmes droits et opportunités.</p>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>Un État Fort et Éthique</h3>
+                <p>Capable de garantir le droit à la santé, une éducation adaptée aux réalités économiques, des emplois dignes pour la jeunesse, et une cohésion nationale fondée sur le respect des identités culturelles.</p>
+            </div>
+            <div class="card">
+                <h3>Une Transformation Concrète</h3>
+                <p>La mission du RFE est de transformer les engagements politiques en résultats concrets. Nous agissons pour rapprocher l'État des citoyens et promouvoir une décentralisation efficace.</p>
+            </div>
+        </div>
+        
+        <blockquote class="quote">
+            "Le Wakanda peut. Le Wakanda doit. Le Wakanda réussira."
+        </blockquote>
+    </section>
+
+    <section id="valeurs">
+        <h2>Nos Valeurs Fondamentales</h2>
+        <p class="section-intro">Le RFE s'appuie sur des valeurs fortes qui guident chacune de ses décisions :</p>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>Unité Nationale</h3>
+                <p>La diversité est une richesse, jamais un facteur de division. Nous bâtissons un Wakanda où toutes les communautés se reconnaissent et œuvrent ensemble pour le progrès.</p>
+            </div>
+            <div class="card">
+                <h3>Justice Sociale</h3>
+                <p>Aucun citoyen ne doit être laissé pour compte. Nous luttons contre les inégalités et garantissons l'accès aux droits fondamentaux pour tous.</p>
+            </div>
+            <div class="card">
+                <h3>Responsabilité</h3>
+                <p>Chaque engagement doit être suivi d'actions mesurables. Nous rendons compte de nos actions et respectons nos promesses.</p>
+            </div>
+            <div class="card">
+                <h3>Éthique et Transparence</h3>
+                <p>La politique au service de l'intérêt général. Nous combattons la corruption et pratiquons une gouvernance ouverte et intègre.</p>
+            </div>
+            <div class="card">
+                <h3>Engagement Citoyen</h3>
+                <p>La participation active des populations est essentielle. Nous construisons le changement avec le peuple, pas à sa place.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">RFE</div>
+        <p>Rassemblement des Forces Émergentes</p>
+        <p>Devise : UNITÉ • TRAVAIL • PROGRÈS</p>
+        <p>Élection Présidentielle du Wakanda 2025</p>
+        <p>© 2025 RFE - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
